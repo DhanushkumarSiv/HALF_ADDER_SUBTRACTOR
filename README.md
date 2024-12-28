@@ -2,6 +2,8 @@
 
 Implementation-of-Half-Adder-and-Half Subtractor-circuit
 
+**DATE :** 18/10/2024
+
 **AIM:**
 
 To design a half adder and half subtractor circuit and verify its truth table in Quartus using Verilog programming.
@@ -22,6 +24,9 @@ Sum = A’B+AB’ =A ⊕ B Carry = AB
 
 Figure -01 HALF ADDER
 
+![image](https://github.com/user-attachments/assets/637c0c8c-5025-4138-a7b1-efb14afb28ed)
+
+
 **Half Subtractor**
 
 The half-subtractor is a combinational circuit which is used to perform subtraction of two bits. It has two inputs, X (minuend) and Y (subtrahend) and two outputs D (difference) and B (borrow). To perform x - y, we have to check the relative magnitudes of x and y. If x ;;, y, we have three possibilities: 0 - 0 = 0, 1 - 0 = 1, and 1 - I = 0. The result is called the difference bit. If x < y, we have 0 - I, and it is necessary to borrow a 1 from the next higher stage. The I borrowed from the next higher stage adds 2 to the minuend bit, just as in the decimal system a borrow adds 10 to a minuend digit. With the minuend equal to 2, the difference becomes 2 - I = 1. The half-subtractor needs two outputs. One output generates the difference and will be designated by the symbol D. The second output, designated B for borrow, generates the binary signal that informs the next stage that a I has been borrowed. 
@@ -33,7 +38,19 @@ Borrow = A’B
 
 Figure -02 HALF Subtractor
 
+![image](https://github.com/user-attachments/assets/13b3fa4d-90a8-4f87-9717-f853b6a63067)
+
+
 **Truthtable**
+
+HALF ADDER
+
+![image](https://github.com/user-attachments/assets/24cf3cf3-a2d7-4878-9072-bd556a9d6bcb)
+
+HALF SUBTRACTOR
+
+![image](https://github.com/user-attachments/assets/fc1d4dea-a66b-4568-90fd-fd4b1d805597)
+
 
 **Procedure**
 
@@ -50,12 +67,54 @@ Figure -02 HALF Subtractor
 
 **Program:**
 
-/* Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
+Program for logic gates and verify its truth table in quartus using Verilog programming
 
-Developed by: RegisterNumber:*/
+Developed by: DHANUSHKUMAR SIVAKUMAR
 
-**RTL Schematic**
+RegisterNumber: 24901013
 
-**Output/TIMING Waveform**
+HALF ADDER
+```
+module Exp3(a,b,sum,carry);
+input a,b;
+output sum,carry;
+assign sum= (a ^ b);
+assign carry= ( a & b);
+endmodule
+```
+HALF SUBTRACTOR
+```
+module hs(a,b,difference,borrow);
+input a,b;
+output difference,borrow;
+assign difference= (a ^ b);
+assign borrow= ( ~a & b);
+endmodule
+```
+
+**RTL DIAGRAM**
+
+HALF ADDER
+
+![image](https://github.com/user-attachments/assets/2737ca84-8438-4b9f-8ab5-a03cbe763b4f)
+
+HALF SUBTRACTOR
+
+![image](https://github.com/user-attachments/assets/8a13b3f5-5ade-49fc-8c96-627eedebbe00)
+
+
+**TIMING Waveform**
+
+HALF ADDER
+
+![image](https://github.com/user-attachments/assets/4ac547ed-77eb-4f2a-a107-7434bda520fd)
+
+HALF SUBTRACTOR
+
+![image](https://github.com/user-attachments/assets/f6eb546e-4c05-4dca-af27-f793219c8109)
+
+
 
 **Result:**
+          Thus the are Half-Adder-and-Half Subtractor-circuit studied and the output is verified.
+
